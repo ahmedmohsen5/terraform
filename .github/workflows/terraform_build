@@ -37,5 +37,5 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve tfplan
-      - name: echo refs/head/main
-        run: echo "current github ref: {github.ref}"
+    - name: echo refs/head/main
+    run: echo "current github ref: {github.ref}"
