@@ -2,7 +2,7 @@ terraform {
 
     backend s3 {
 
-bucket = terraform-state-770
+bucket = tf-status
 
 key = terraform/backend
 
