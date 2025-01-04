@@ -6,7 +6,7 @@ on:
       - '**.tf'
       - '**.tfvars'
     branches:
-      - master
+      - '*'
 
 jobs:
   terraform:
