@@ -1,9 +1,7 @@
 name: Terraform Build
 on:
   push:
-    paths:
-      - '**.tf'
-      - '**.tfvars'
+    
     branches:
       - master
 
