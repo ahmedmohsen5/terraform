@@ -1,18 +1,19 @@
-name: Terraform Build
+name: Test Pipeline
 on:
-  push:
-    
+  workflow_run:
+    workflows: ["Terraform Build"]
+    types:
+      - completed
     branches:
       - master
 
-       
 jobs:
   test:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     steps:
       - name: Print Test Message
         run: |
           echo "This is a test message"
-          echo "Triggered by push event"
-
+          echo "Triggered after successful Terraform Build"
