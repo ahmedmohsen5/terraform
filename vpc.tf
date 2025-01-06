@@ -1,5 +1,5 @@
 module "VPC" {
-  source = "terraform-aws-modules/vpc/aws"
+ source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"
   name = var.VPC_NAME
   cidr = var.VpcCIDR
@@ -10,6 +10,8 @@ module "VPC" {
   single_nat_gateway = true
   enable_dns_hostnames = true
   enable_dns_support = true
+  
+
   tags = {
     Terraform = "true"
     Environment = "Prod"
