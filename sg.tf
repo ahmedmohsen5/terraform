@@ -1,7 +1,7 @@
 resource "aws_security_group" "terra-bean-elb-sg" {
   name        = "terra-bean-elb-sg"
   description = "Security group for bean-elb"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = module.VPC.vpc_id
   egress {
     from_port   = 0
     protocol    = "-1"
@@ -19,7 +19,7 @@ resource "aws_security_group" "terra-bean-elb-sg" {
 resource "aws_security_group" "terra-bastion-sg" {
   name        = "terra-bastion-sg"
   description = "Security group for bastionisioner ec2 instance"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = module.VPC.vpc_id
   egress {
     from_port   = 0
     to_port     = 0
@@ -37,7 +37,7 @@ resource "aws_security_group" "terra-bastion-sg" {
 resource "aws_security_group" "terra-prod-sg" {
   name        = "terra-prod-sg"
   description = "Security group for beanstalk instances"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = module.VPC.vpc_id
   egress {
     from_port   = 0
     to_port     = 0
@@ -54,7 +54,7 @@ resource "aws_security_group" "terra-prod-sg" {
 
 resource "aws_security_group" "terra-backend-sg" {
   name   = "terra-backend-sg"
-  vpc_id = module.vpc.vpc_id
+  vpc_id = module.VPC.vpc_id
   egress {
     from_port = 0
     protocol = "-1"
